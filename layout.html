@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatibale" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='./font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css' />
+  <link href='styles.css' rel='stylesheet' type='text/css' />
+</head>
+<body>
+
+	<div class="container">
+		
+		<!-- dropdown menu when screen size < 800px -->
+		<div class="visible-sm dropdown-sm" id="dropdown-sm-panel">
+			<div class="dropdownlist-sm">
+				<a href="" class="list-item-title disable">Account</a>
+				<a href="" class="list-item">Link1</a>
+				<a href="" class="list-item">Link2</a>
+				<a href="" class="list-item">Link3</a>
+			</div>
+		</div>
+
+		<!-- header section -->
+		<div class="header clearfix">
+
+			<!-- nav bar at the top of the page -->
+			<div class="header-nav visible-md visible-sm">
+				<ul class="nav-inner clearfix">
+					<li><a href="">home</a></li>
+					<li><a href="">email</a></li>
+					<li><a href="">phone</a></li>
+					<li><a href="">username</a></li>
+					<li><a href="">address</a></li>
+				</ul>
+			</div>
+	
+			<!-- logo/email-search/dropdown-ctrl -->
+			<div class="title">
+				<!-- logo -->
+				<div class="logo">
+					<!-- choose 2x when screen > 800px, choose 1x when scrren < 800px -->
+					<img src="logo1.png" class="logo-md visible-md">
+					<img src="logo2.png" class="logo-sm visible-sm">
+				</div>
+
+				<!-- email-search input -->
+				<div class="search">	
+					<form class="form-group">
+						<input type="search" class="email-search email-search-sm email-search-md">
+						<span class="magnify-glass"><i class="icon fa fa-search"></i></span>
+					</form>
+				</div>
+				
+				<!-- dropdown button ctrl -->
+				<div class="dropdown-btn ">
+
+					<!-- dropdown-ctrl when screen > 800px -->
+					<div class="btn-group visible-md">
+						<button class="btn btn-left" onclick="showDropDown()">
+							<p class="visible-md" id="btn-label">Account</p>
+						</button>
+						<button class="btn btn-right" onclick="showDropDown()">
+							<i class="icon fa fa-angle-down"></i>
+						</button>
+						<div class="dropdown hide" id="dropdown-md">
+							<ul class="dropdownlist">
+								<a href=""><li>Link1</li></a>
+								<a href=""><li>Link2</li></a>
+								<a href=""><li>Link3</li></a>
+							</ul>
+						</div>
+					</div>
+
+					<!-- dropdown-ctrl when screen < 800px -->
+					<button class="btn btn-dropdown visible-sm" onclick="showDropDownSm()">
+						<i class="visible-sm icon fa fa-angle-down" ></i>
+					</button>
+				</div>
+
+			</div> 
+		</div>
+
+		<!-- left content (appear only when screen > 800px) -->
+		<div class="container-content-md size-sm">
+			<div class="container-left">
+				<div class="left-content">
+					<!-- toc -->
+					<div class="table-of-content">
+						<div class="content-title">
+							<div class="top">
+								<i class="section-icon fa fa-list"></i>
+								<label>Table of Contents</label>	
+							</div>
+						</div>
+						<div class="toc-content">
+						</div>
+					</div>				
+				</div>
+			</div>
+
+			<!-- main content -->
+			<div class="container-main container-main-md">
+				<div class="main-content ">
+					<!-- result -->
+					<div class="result">
+						<div class="content-title hidden-sm">
+							<div class="top ">
+								<i class="section-icon fa fa-envelope"></i>
+								<label>Result</label>
+							</div>
+						</div>			
+						<p id="result-content">Panel Contents</p>
+					</div>
+				</div>
+			</div>
+		</div>	
+
+		<!-- footer section -->
+		<div class="footer hidden-sm">
+			<div class="footer-inner">
+				<!-- copyright -->
+				<div class="copyright">
+					<p >&copy by Johnny responsive practice</p>
+				</div>
+
+				<!-- footer nav -->
+				<div class="footer-nav-container">	
+					<ul class="footer-nav">
+						<li><a href="">link1 </a></li>
+						<li><a href="">link2 </a></li>
+						<li><a href="">link3 </a></li>
+						<li><a href="">link4 </a></li>
+						<li><a href="">link5 </a></li>
+						<li><a href="">link6 </a></li>
+						<li><a href="">link7 </a></li>
+						<li><a href="">link8 </a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	
+	<script type="text/javascript">
+		(function(){
+			window.showDropDown = function(){
+				var element = document.querySelector('#dropdown-md');
+					element.classList.toggle("dropdown-md-open"); 
+					element.classList.toggle("hide"); 
+					element.classList.toggle("show"); 
+			}
+
+			window.showDropDownSm = function(){
+				var element = document.querySelector('#dropdown-sm-panel');
+					element.classList.toggle("dropdown-sm-open"); 
+					element.classList.toggle("hide"); 
+					element.classList.toggle("show"); 
+			}
+		})();
+
+	</script>
+
+
+</body>
+</html>
